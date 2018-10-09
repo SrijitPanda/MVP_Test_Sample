@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-import dagger.Provides;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import dagger.android.support.AndroidSupportInjectionModule;
@@ -36,7 +35,6 @@ public interface AppComponent extends AndroidInjector<DaggerApplication>
 
         @BindsInstance
         AppComponent.Builder application(Application application);
-
         AppComponent build();
     }
 }

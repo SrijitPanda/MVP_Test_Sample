@@ -9,7 +9,6 @@ import retrofit2.http.GET;
 
 public interface NetworkClass {
 
-    @GET()
+    @GET("s/2iodh4vg0eortkl/facts.json")
     Observable<Response<ResponseBody>> getFeedDataFromApiCall();
-
 }

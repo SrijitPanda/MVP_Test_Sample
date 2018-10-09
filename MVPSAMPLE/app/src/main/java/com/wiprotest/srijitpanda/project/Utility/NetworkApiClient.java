@@ -32,11 +32,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkApiClient {
 
     private static final long CACHE_SIZE = 10 * 1024 * 1024; //10 MB
+    private static final String BASE_URL = "https://dl.dropboxusercontent.com/";
 
     @Provides
-    @Named(VariableConstant.BASE_URL)
+    @Named(BASE_URL)
     String provideBaseUrlString() {
-        return VariableConstant.BASE_URL;
+        return BASE_URL;
     }
 
     @Provides
@@ -53,7 +54,7 @@ public class NetworkApiClient {
 
     @Provides
     @Singleton
-    Retrofit provideRetrofit(Converter.Factory converter, @Named(VariableConstant.BASE_URL) String baseUrl,
+    Retrofit provideRetrofit(Converter.Factory converter, @Named(BASE_URL) String baseUrl,
                              OkHttpClient okHttpClient)
     {
         return new Retrofit.Builder()
